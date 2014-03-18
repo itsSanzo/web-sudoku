@@ -9,6 +9,10 @@ def random_sudoku
   sudoku.to_s.chars
 end
 
+def puzzle(sudoku)
+  sudoku
+end
+
 get "/" do
   @current_solution = random_sudoku
   erb :index

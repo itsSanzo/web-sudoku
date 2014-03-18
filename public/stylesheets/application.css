@@ -1,23 +1,36 @@
 body {
+  background: #343838;
   text-align: center;
-  font-family: Helvetica;
+  font-family: Futura;
   font-size: 20px;
+  color: #00B4CC;
+  margin-top: 50px;
 }
 
 #sudoku {
   font-size: 0;
   text-align: center;
+
 }
 
 div.box, div.cell {
   display: inline-block;
 }
 
+div.box {
+  outline: 3px solid #343838;
+}
+
+.cell {
+  border: 1px solid #343838;
+}
+
 .cell input {
   width: 40px;
   height: 40px;
   text-align: center;
-  font-size: 25px;
-  font-family: "Arial Black";
-  color: hotpink;
+  font-size: 22px;
+  font-family: Futura;
+  color: #008C9E;
+  border: 0px;
 }
