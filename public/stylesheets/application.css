@@ -10,7 +10,6 @@ body {
 #sudoku {
   font-size: 0;
   text-align: center;
-
 }
 
 div.box, div.cell {
