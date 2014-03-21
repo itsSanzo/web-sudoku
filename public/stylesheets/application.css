@@ -3,10 +3,17 @@
 body {
   background: #343838 url("/images/bg.png");
   text-align: center;
-  font-family: Helvetica;
+  font-family: Lato;
   font-size: 20px;
-  color: #00B4CC;
+  color: #FFFFFF;
   margin-top: 50px;
+}
+
+#flash {
+  padding: 5px 0px 20px 0px;
+  font-size: 15px;
+  color: #FFFFFF;
+  letter-spacing: 1px;
 }
 
 h1 {
@@ -15,7 +22,7 @@ h1 {
   font-weight: 300;
   font-size: 45px;
   letter-spacing: 5px;
-  margin: 0px 0px 20px 0px;
+  margin: 0px 0px 0px 0px;
   padding: 5px;
   color: #ffffff;
   text-align: center;
