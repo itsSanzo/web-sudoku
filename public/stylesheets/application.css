@@ -1,10 +1,24 @@
+@import url(http://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400,600,700|Lato);
+
 body {
-  background: #343838;
+  background: #343838 url("/images/bg.png");
   text-align: center;
-  font-family: Futura;
+  font-family: Helvetica;
   font-size: 20px;
   color: #00B4CC;
   margin-top: 50px;
+}
+
+h1 {
+  font-family: "Lato";
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 45px;
+  letter-spacing: 5px;
+  margin: 0px 0px 20px 0px;
+  padding: 5px;
+  color: #ffffff;
+  text-align: center;
 }
 
 #sudoku {
@@ -16,12 +30,22 @@ div.box, div.cell {
   display: inline-block;
 }
 
-div.box {
-  outline: 3px solid #343838;
+/* div.box {
+  outline: 3px solid #0d060d;
 }
 
 .cell {
-  border: 1px solid #343838;
+  border: 1px solid #0d060d;
+} */
+
+.cell, .row, .cell-row {
+  background: transparent;
+}
+
+.box {
+  background: rgba(13,6,13,0.5);
+  margin: 0px;
+  padding: 3px;
 }
 
 .cell input {
@@ -29,7 +53,9 @@ div.box {
   height: 40px;
   text-align: center;
   font-size: 22px;
-  font-family: Futura;
-  color: #008C9E;
+  font-family: Lato;
+  color: #2e1863;
   border: 0px;
+  background: ffffff;
+  margin: 2px;
 }
