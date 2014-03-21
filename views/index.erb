@@ -9,6 +9,7 @@
 <h1>Space Sudoku</h1>
 
 <div id="sudoku">
+<form action="/" method="post">
   <% 3.times do |row| %>
     <div class='row'>
       <% 3.times do |box| %>
@@ -19,7 +20,14 @@
             <div class="cell">
               <% cell_index = row * 27 + box * 3 + cell_row * 9 + cell %>
               <% cell_value = @current_solution[cell_index] %>
-              <input type="text" maxlength="1" autocomplete="off" value="<%= cell_value %>" >
+              <% cell_value = cell_value(@current_solution[cell_index]) %>
+              <% colour_class = 
+              colour_class(@check_solution, 
+              @puzzle[cell_index], 
+              @current_solution[cell_index], 
+              @solution[cell_index])  
+              %>
+              <input value="<%= cell_value %>" class="<%= colour_class %>" name="cell[]" type="text" maxlength="1" autocomplete="off" >
             </div>
           <% end %>
           </div>
@@ -28,6 +36,8 @@
       <% end %>
     </div>
   <% end %>
+  <button>Check solution</button>
+</form>
 </div>
 
 </body>

@@ -55,6 +55,28 @@ div.box, div.cell {
   font-family: Lato;
   color: #2e1863;
   border: 0px;
-  background: ffffff;
+  background: rgba(255,255,255,0.5);
   margin: 2px;
+}
+
+button {
+  color: #ffffff;
+  background: #2e1863;
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+  font-family: Lato;
+  padding: 10px;
+  margin: 20px 10px;
+  border: 0px;
+}
+
+.incorrect {
+  background: #f8e26b!important;
+}
+
+.value-provided {
+  background: rgba(255,255,255,1)!important;
+
 }
