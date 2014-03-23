@@ -19,11 +19,12 @@ def random_sudoku
 end
 
 def puzzle(sudoku)
-  sudoku.map {|num| rand > 0.7 ? 0 : num }
+  difficulty = session[:difficulty].to_f ||= 0.75
+  sudoku.map {|num| rand > difficulty ? 0 : num } 
 end
 
 def generate_new_puzzle_if_necessary
-  return if session[:current_solution] && session[:puzzle] && session[:solution]
+  return if session[:current_solution] && session[:solution]
   sudoku = random_sudoku
   session[:solution] = sudoku
   session[:puzzle] = puzzle(sudoku)
@@ -77,5 +78,12 @@ end
 
 post "/new" do
   session[:solution] = nil
+  session[:difficulty] = params[:difficulty]
+  redirect to("/")
+end
+
+post "/reset" do
+  session[:current_solution] = session[:puzzle]
+  flash[:notice] = "You can do this!"
   redirect to("/")
 end

@@ -6,7 +6,7 @@
 
 <body>
 
-<h1>Space Sudoku</h1>
+<h1>Space<br>Sudoku</h1>
 <div id="flash">
   <%= flash[:notice] %>
 </div>
@@ -28,16 +28,22 @@
     </div>
   <% end %>
 
-
-
-  <!-- New game:<br>
-  <button>Easy</button>
-  <button>Hard</button> -->
-  <button type="submit">Check solution</button>
+  
+<button type="submit">Check solution</button>
 </form>
+
+<form action="/reset" method="post">
+  <button type="submit">Restart this game</button>
+</form> <br>
+
 <form action="/new" method="post">
-<button type="submit">New game</button>
+  <h2>Want to start a new sudoku?</h2>
+  <button type="submit" name="difficulty" value="0.75">Easy</button>
+  <button type="submit" name="difficulty" value="0.55">Medium</button>
+  <button type="submit" name="difficulty" value="0.45">Hard</button>
 </form>
+
+
 </div>
 
 </body>
