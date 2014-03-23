@@ -1,12 +1,15 @@
 require "sinatra"
+require 'sinatra/partial' 
+require 'rack-flash'
 require_relative "./lib/sudoku"
 require_relative "./lib/cell"
-require 'sinatra/partial' 
-set :partial_template_engine, :erb
-require 'rack-flash'
-use Rack::Flash
+require_relative "./helpers/application"
 
 enable :sessions
+set :session_secret, "I'm the secret key to sign the cookie"
+use Rack::Flash
+set :partial_template_engine, :erb
+
 
 def random_sudoku
   seed = (1..9).to_a.shuffle + Array.new(81-9,0)
@@ -20,7 +23,7 @@ def puzzle(sudoku)
 end
 
 def generate_new_puzzle_if_necessary
-  return if session[:current_solution] && session[:puzzle] 
+  return if session[:current_solution] && session[:puzzle] && session[:solution]
   sudoku = random_sudoku
   session[:solution] = sudoku
   session[:puzzle] = puzzle(sudoku)
@@ -61,7 +64,7 @@ get "/" do
 end
 
 post "/" do
-  cells = box_order_to_row_order(params["cell"])
+  cells = box_order_to_row_order(params[:cell])
   session[:current_solution] = cells.map {|value| value.to_i }.join
   session[:check_solution] = true
   redirect to("/")
@@ -72,20 +75,7 @@ get "/solution" do
   erb :index
 end
 
-helpers do
-  def colour_class(solution_to_check, puzzle_value, current_solution_value, solution_value)
-    must_be_guessed = puzzle_value == 0
-    tried_to_guess = current_solution_value.to_i != 0
-    guessed_incorrectly = current_solution_value != solution_value
-
-    if solution_to_check && must_be_guessed && tried_to_guess && guessed_incorrectly
-      "incorrect"
-    elsif !must_be_guessed
-      "value-provided"
-    end   
-  end
-
-  def cell_value(value)
-    value.to_i == 0 ? '' : value
-  end
+post "/new" do
+  session[:solution] = nil
+  redirect to("/")
 end

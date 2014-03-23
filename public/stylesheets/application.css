@@ -1,49 +1,55 @@
-@import url(http://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400,600,700|Lato);
+@import url(http://fonts.googleapis.com/css?family=Lato|Fugaz+One);
 
 body {
   background: #343838 url("/images/bg.png");
-  text-align: center;
+  margin: 50px 0px 0px 0px;
+  color: #FFFFFF;
   font-family: Lato;
   font-size: 20px;
-  color: #FFFFFF;
-  margin-top: 50px;
-}
-
-#flash {
-  padding: 5px 0px 20px 0px;
-  font-size: 15px;
-  color: #FFFFFF;
-  letter-spacing: 1px;
+  text-align: center;
 }
 
 h1 {
-  font-family: "Lato";
+  font-family: "Fugaz One";
   text-transform: uppercase;
-  font-weight: 300;
-  font-size: 45px;
-  letter-spacing: 5px;
+  font-size: 50px;
+  letter-spacing: 1px;
   margin: 0px 0px 0px 0px;
   padding: 5px;
   color: #ffffff;
   text-align: center;
 }
 
+button {
+  color: #ffffff;
+  background: #2e1863;
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+  font-family: Lato;
+  padding: 10px;
+  margin: 20px 5px;
+  border: 0px;
+}
+
+#flash {
+  padding: 0px 0px 5px 0px;
+  font-size: 15px;
+  color: #FFFFFF;
+  letter-spacing: 1px;
+}
+
 #sudoku {
   font-size: 0;
   text-align: center;
+  margin: 20px;
 }
 
-div.box, div.cell {
+
+.box, .cell {
   display: inline-block;
 }
-
-/* div.box {
-  outline: 3px solid #0d060d;
-}
-
-.cell {
-  border: 1px solid #0d060d;
-} */
 
 .cell, .row, .cell-row {
   background: transparent;
@@ -66,18 +72,6 @@ div.box, div.cell {
   margin: 2px;
 }
 
-button {
-  color: #ffffff;
-  background: #2e1863;
-  border-radius: 5px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 12px;
-  font-family: Lato;
-  padding: 10px;
-  margin: 20px 10px;
-  border: 0px;
-}
 
 .incorrect {
   background: #f8e26b!important;
@@ -85,5 +79,4 @@ button {
 
 .value-provided {
   background: rgba(255,255,255,1)!important;
-
 }
