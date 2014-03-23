@@ -10,6 +10,14 @@
 <div id="flash">
   <%= flash[:notice] %>
 </div>
+
+<form action="/new" method="post">
+  <h2>Start a new sudoku:</h2>
+  <button type="submit" name="difficulty" value="0.75">Easy</button>
+  <button type="submit" name="difficulty" value="0.55">Medium</button>
+  <button type="submit" name="difficulty" value="0.45">Hard</button>
+</form>
+
 <div id="sudoku">
 <form action="/" method="post">
   <% 3.times do |row| %>
@@ -36,12 +44,7 @@
   <button type="submit">Restart this game</button>
 </form> <br>
 
-<form action="/new" method="post">
-  <h2>Want to start a new sudoku?</h2>
-  <button type="submit" name="difficulty" value="0.75">Easy</button>
-  <button type="submit" name="difficulty" value="0.55">Medium</button>
-  <button type="submit" name="difficulty" value="0.45">Hard</button>
-</form>
+
 
 
 </div>
