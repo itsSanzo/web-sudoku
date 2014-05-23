@@ -2,7 +2,7 @@
 
 ## Makers Academy Week 5 Project 
 
-![Sudoku website preview](https://raw.githubusercontent.com/itsmurasaki/web-sudoku/master/public/images/preview.png)
+![Sudoku website preview](/public/images/preview.png)
 
 The aim of this project was to build a web app to play sudoku. This was our first project involving front-end development and Sinatra.
 
